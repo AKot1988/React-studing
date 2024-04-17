@@ -1,0 +1,141 @@
+.header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-image: linear-gradient(to right, #54d8e9, #3f86e9);
+
+    &Logo {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    &User {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    &MenuBar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &Menu {
+      display: flex;
+      cursor: pointer;
+      list-style: none;
+      
+      &Item {
+        width: 100px;
+        margin: 0 10px;
+        text-align: center;
+        border-radius: 5px;
+        color: white;
+        background-color: #70b7e3;
+        border: 1px solid #163a50;
+        font-weight: 600;
+        transition: 0.3s;
+        &:hover {
+          background-color: #3fa8e9;
+        }
+      }
+    }
+
+    &InputBar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 20px;
+    }
+
+    &Input {
+      width: 150px;
+      height: 30px;
+      border-radius: 5px;
+      border: 1px solid #163a50;
+      margin: 0 10px;
+      font-size: 16px;
+    }
+
+    &Button {
+      width: 100px;
+      height: 30px;
+      text-align: center;
+      font-size: 10px;
+      margin: 0 30px 0 10px;
+      border-radius: 5px;
+      border: 1px solid #163a50;
+      background-color: #70b7e3;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover {
+        background-color: #3fa8e9;
+      }
+    }
+}
+
+@media screen and (max-width: 768px){
+  .header {
+    flex-direction: column;
+    padding: 10px 0;
+    &MenuBar {
+      margin-top: 10px;
+    }
+    &InputBar {
+      margin: 10px 0;
+    }
+
+    &Menu {
+      flex-direction: column;
+      &Item {
+        margin: 2px 0;
+      }
+    }
+
+    &InputBar {
+      flex-direction: column;
+    }
+
+    &Input {
+      width: 100%;
+      margin: 10px 0;
+    }
+
+    &Button {
+      margin: 10px 0 10px 0;
+    }
+  }
+}
+@media screen and (max-width: 265px){
+  .header {
+
+    &Menu {
+      padding: 0;
+    }
+
+    &MenuBar {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      &Item {
+        margin: 2px 0;
+      }
+    }
+
+    &Input {
+      max-width: 100%;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+}
