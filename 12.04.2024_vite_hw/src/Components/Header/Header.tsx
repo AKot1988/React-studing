@@ -17,8 +17,8 @@ const Header: FC<HeaderProps> = ({logoURL, userPhoto, menu, searchPlaceholder}) 
       <div className= {classes.headerMenuBar}>
         <img src={logoURL} alt='companyLogo' className={classes.headerLogo}></img>
         <ul className={classes.headerMenu}>
-          {menu.map((headerItem, index) => 
-            <HeaderItem text={headerItem.text} id={headerItem.id} type={headerItem.type} className={headerItem.className} key={index}/>
+          {menu.map((headerItem) => 
+            <HeaderItem key={`${headerItem.id}${headerItem.text}`} text={headerItem.text} id={headerItem.id} type={headerItem.type} className={headerItem.className}/>
           )}
         </ul>
       </div>
