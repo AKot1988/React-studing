@@ -1,0 +1,19 @@
+.timer {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  font-size: 50px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #000;
+
+  &Value {
+    size: 75px;
+    color: red;
+  }
+}

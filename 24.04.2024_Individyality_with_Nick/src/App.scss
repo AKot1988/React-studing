@@ -1,0 +1,16 @@
+.themeBtn {
+  max-width: 20ch;
+  padding: 1em 1.5em;
+  font-size: 16px;
+  text-align: center;
+  
+  &__light {
+    background-color: yellow;
+    color: #3f3f3f;
+  }
+  
+  &__dark {
+    background-color: blue;
+    color: #f3f3f3;
+  }
+}

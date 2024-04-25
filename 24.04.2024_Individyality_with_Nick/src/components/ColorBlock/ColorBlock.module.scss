@@ -1,0 +1,14 @@
+.block {
+  cursor: pointer;
+  width: 20ch;
+  height: 20ch;
+  border-radius: 1ch;
+
+  &__light {
+    background-color: #f0f;
+  }
+
+  &__dark {
+    background-color: #007;
+  }
+}
