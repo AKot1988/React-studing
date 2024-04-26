@@ -1,33 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState, useEffect } from 'react'
 import './App.css'
+import Quizz from './components/Quizz/Quizz'
+import Button from './components/Button/Button'
+
+const reactQuestions = [
+  "Що таке React.js і для чого він використовується?",
+  "Яка різниця між класовими та функціональними компонентами в React?",
+  "Що таке віртуальний DOM (Virtual DOM) в React і як він працює?",
+  "Які основні принципи життєвого циклу компонентів React?",
+  "Як можна передавати дані вниз (props) і вгору (callbacks) між компонентами в React?"
+];
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [doesQuizzStarted, setQuizzStarted] = useState(false)
+  const [currentQuestionIndex, setCurrentQuestion] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {!doesQuizzStarted && <button onClick={()=>setQuizzStarted(!doesQuizzStarted)}>Start quizz</button>}
+      {(reactQuestions.length - 1) && doesQuizzStarted && <Quizz question = {reactQuestions}></Quizz>}
+      {currentQuestionIndex === (reactQuestions.length - 1) && <Button onClick={() => setQuizzStarted(false)} text={"Finish quizz"} />}
     </>
   )
 }
