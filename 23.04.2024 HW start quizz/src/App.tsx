@@ -13,13 +13,12 @@ const reactQuestions = [
 
 function App() {
   const [doesQuizzStarted, setQuizzStarted] = useState(false)
-  const [currentQuestionIndex, setCurrentQuestion] = useState(0)
+  // const [currentQuestionIndex, setCurrentQuestion] = useState(0)
 
   return (
     <>
       {!doesQuizzStarted && <button onClick={()=>setQuizzStarted(!doesQuizzStarted)}>Start quizz</button>}
-      {(reactQuestions.length - 1) && doesQuizzStarted && <Quizz question = {reactQuestions}></Quizz>}
-      {currentQuestionIndex === (reactQuestions.length - 1) && <Button onClick={() => setQuizzStarted(false)} text={"Finish quizz"} />}
+      {doesQuizzStarted && <Quizz question = {reactQuestions}></Quizz>}
     </>
   )
 }
