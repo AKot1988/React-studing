@@ -1,0 +1,15 @@
+
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { createBrowserRouter } from 'react-router-dom'
+import { Home } from './pages'
+import './App.css'
+
+function App() {
+  return (
+    <>
+      <Home />
+    </>
+  )
+}
+
+export default App
