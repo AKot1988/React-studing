@@ -1,7 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Layout, Home, Catalog, Cart} from "../pages";
+import { Layout, Home, Catalog, Cart, CatalogItemPage} from "../pages";
 import { fetchData } from "../components";
 import ROUTES_NAMES from "./routesNames";
+import { fetchItemByID } from "../components/Helper/Helper";
 
 
 const router = createBrowserRouter([
@@ -16,11 +17,19 @@ const router = createBrowserRouter([
       {
         path: ROUTES_NAMES.CATALOG,
         element: <Catalog />,
-        loader: () => fetchData()
+        loader: () => fetchData('/unitsItems.json'),
       },
-      { path: '/cart', element: <Cart /> },
+      {
+        path: `${ROUTES_NAMES.CATALOG}/:id`,
+        element: <CatalogItemPage/>,
+        loader: () => fetchData('/unitsItems.json'),
+      },
+      {
+        path: '/cart',
+        element: <Cart />
+      },
     ],
-    errorElement: <h3>404 Not Found Нема блять такого шляху</h3>
+    errorElement: <h3>Нема, блять, такого шляху</h3>
   }
 ])
 

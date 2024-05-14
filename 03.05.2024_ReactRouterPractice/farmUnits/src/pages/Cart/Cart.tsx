@@ -1,6 +1,7 @@
 
 import { FC, useEffect, useState } from 'react';
 import { getDataToCart, UnitItem } from '../../components';
+import classes from './Cart.module.scss';
 
 const Cart: FC = () => {
   const [cartItems, setCartItems] = useState<any[]>([]);
@@ -12,7 +13,7 @@ const Cart: FC = () => {
   }, []);
 
   return (
-    <div>
+    <div className={classes.cartWrapper}>
       <h1>Cart</h1>
       {cartItems.map((unit) => (
         <UnitItem

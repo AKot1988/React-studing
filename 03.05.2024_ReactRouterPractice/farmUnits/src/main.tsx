@@ -1,6 +1,5 @@
 import ReactDOM from 'react-dom/client'
-// import App from './App.tsx'
-import router from './routes/router.tsx'
+import { router } from './routes'
 import './index.css'
 
 
