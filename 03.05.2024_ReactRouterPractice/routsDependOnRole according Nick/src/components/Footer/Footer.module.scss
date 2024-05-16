@@ -1,0 +1,16 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: aqua;
+  
+
+  &Title {
+    font-weight: thin;
+    color: #000000;
+    text-align: center;
+    // line-height: 50px;
+  }
+}
